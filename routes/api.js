@@ -5,7 +5,7 @@ const User = require('../models/user');
 const Event = require('../models/events')
 const Special = require('../models/specialevents')
 const jwt = require('jsonwebtoken')
-const db = "mongodb+srv://Girish:<db_password>@cluster0.3nug5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const db = "mongodb+srv://Girish:<db_password>%40cluster0.3nug5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 
 const con = mongoose.connect(db, function(err){
