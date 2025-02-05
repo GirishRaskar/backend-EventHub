@@ -4,7 +4,7 @@ const cors = require('cors')
 const path = require('path');
 
 const api = require('./routes/api');
-const port = 3000;
+const port = 10000;
 
 const app = express();
 app.use(cors())
@@ -24,7 +24,7 @@ app.listen(port, function(){
 
 // const {MongoClient} = require("mongodb");
 const { MongoClient, ObjectId } = require('mongodb');
-const URL = "mongodb://localhost:27017"
+const URL = "mongodb+srv://Girish:<db_password>%40cluster0.3nug5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 const client = new MongoClient(URL);
 
 async function GetConnection()
