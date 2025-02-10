@@ -3,8 +3,14 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 const path = require('path');
 
+require('dotenv').config();
+
+const port = process.env.PORT || 10000;  // Load PORT from .env
+const URL = process.env.MONGO_URL;  // Load MongoDB URI from .env
+
+
 const api = require('./routes/api');
-const port = 10000;
+
 
 const app = express();
 app.use(cors())
@@ -24,8 +30,10 @@ app.listen(port, function(){
 
 // const {MongoClient} = require("mongodb");
 const { MongoClient, ObjectId } = require('mongodb');
-const URL = "mongodb+srv://Girish:<MypassionBusi23%40>%40cluster0.3nug5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-const client = new MongoClient(URL);
+
+
+const client = new MongoClient(URL, { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 async function GetConnection()
 {
